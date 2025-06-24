@@ -1,0 +1,90 @@
+<!-- <iframe class="w-screen aspect-auto" src="" frameborder=""0></iframe>
+ 
+  <iframe
+    class="absolute inset-0 w-full h-full"
+    src="https://www.youtube.com/embed/-UcXWWB4op0?autoplay=1&mute=1&loop=1&controls=0"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+ 
+
+<div class="h-screen bg-white">
+  <div class="pt-[20%] px-24 absolute h-full text-white bg-gradient-to-r from-black">
+    <h1 class="text-6xl font-bold">Jarann</h1>
+    <p class="inline-block py-6 text-xl w-1/4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nemo fuga
+      magnam, accusantium labore vel dicta nesciunt blanditiis exercitationem
+      doloribus a tempore commodi vitae quae eligendi. Sunt reiciendis
+      laudantium excepturi?
+    </p>
+    <div>
+        <button class="bg-white text-black py-4 px-12 text-xl rounded-lg hover:bg-opacity-70 transition-[1s]">
+           ► play
+        </button>
+        <button class="mx-2 bg-gray-500 text-white px-12 py-4 text-xl bg-opacity-50 rounded-lg">
+            more info
+        </button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="relative h-screen w-full overflow-hidden">
+  
+  <iframe
+    class="absolute inset-0 w-full h-full"
+    [src]="videoUrl"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+
+   
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/10 flex items-center px-24">
+    <div class="text-white max-w-xl">
+      <h1 class="text-6xl font-bold">Jarann</h1>
+      <p class="py-6 text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nemo fuga
+        magnam, accusantium labore vel dicta nesciunt blanditiis exercitationem
+        doloribus a tempore commodi vitae quae eligendi.
+      </p>
+      <div class="flex gap-4">
+        <button class="bg-white text-black py-3 px-10 text-xl rounded-lg hover:bg-opacity-70 transition-all">
+           ► Play
+        </button>
+        <button class="bg-gray-500 text-white px-10 py-3 text-xl bg-opacity-50 rounded-lg">
+          More Info
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
+
+ <div class="relative h-screen w-full overflow-hidden ">
+  <iframe
+    class="absolute inset-0 w-full h-full"
+    [src]="videoUrl"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black/10 flex items-center px-24">
+    <div class="text-white max-w-xl">
+      <h1 class="text-6xl font-bold">{{ bannerTitle }}</h1>
+      <p class="py-6 text-xl">{{ bannerOverview }}</p>
+      <div class="flex gap-4">
+        <button class="bg-white text-black py-3 px-10 text-xl rounded-lg hover:bg-opacity-70 transition-all">
+          ► Play
+        </button>
+        <button class="bg-gray-500 text-white px-10 py-3 text-xl bg-opacity-50 rounded-lg">
+          More Info
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

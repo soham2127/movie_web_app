@@ -1,0 +1,54 @@
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  Input,
+  OnInit
+} from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
+import { IVideoContent } from '@app/shared/models/video-content.interface';
+import { DescriptionPipe } from '@app/shared/pipes/description.pipe';
+import { ImagePipe } from '@app/shared/pipes/image.pipe';
+import { trigger, transition, style, animate } from '@angular/animations';
+
+
+
+@Component({
+  selector: 'app-movie-carousel',
+  standalone: true,
+  imports: [CommonModule,DescriptionPipe,ImagePipe,NgIf],
+  templateUrl: './movie-carousel.component.html',
+  styleUrls: ['./movie-carousel.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+   animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(300, style({ opacity: 1 }))
+      ])
+    ])
+  ]
+})
+export class MovieCarouselComponent implements OnInit {
+  @Input() videoContents: IVideoContent[]=[];
+  @Input() title!: string;
+  selectedContent: String | null=  null;
+  
+ 
+
+  breakpoints = {
+    600: { slidesPerView: 2, slidesPerGroup: 2, centeredSlides: true },
+    900: { slidesPerView: 3, slidesPerGroup: 3, centeredSlides: true },
+    1200: { slidesPerView: 4, slidesPerGroup: 4, centeredSlides: true },
+    1500: { slidesPerView: 5, slidesPerGroup: 5, centeredSlides: true },
+    1800: { slidesPerView: 6, slidesPerGroup: 5, centeredSlides: true }
+  };
+
+  ngOnInit(): void {}
+
+  setHoverMovie(movie: IVideoContent){
+    this.selectedContent=movie.title ?? movie.name;
+  }
+  clearHoverMovie(){
+    this.selectedContent = null;
+  }
+}

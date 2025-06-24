@@ -1,0 +1,24 @@
+<app-header [userImg]="userProfileImg"/> 
+
+
+<!-- <app-banner [bannerTitle]="(bannerDetails | async)?.original_title" [bannerOverview]="(bannerDetails | async)?.overview"
+[key]="(bannerVideos | async)?.results(0).key"/> -->
+
+
+<app-banner
+  [bannerTitle]="(bannerDetails | async)?.original_title"
+  [bannerOverview]="(bannerDetails | async)?.overview"
+  [key]="(bannerVideos | async)?.results[0]?.key">
+</app-banner>
+<!-- <app-banner/> -->
+<app-movie-carousel [videoContents]="movies" [title]="'Popular on Movieflix'"/>
+<app-movie-carousel [videoContents]="tvShows" [title]="'Trending Tv Shows'"/>
+<app-movie-carousel [videoContents]="nowPlayingMovies" [title]="'Now Playing Movies'"/>
+<app-movie-carousel [videoContents]="popularMovies" [title]="'Popular Movies'"/>
+<app-movie-carousel [videoContents]="upcomingMoviesS" [title]="'Upcoming Movies'"/>
+
+
+
+<!-- other sections -->
+
+<app-footer></app-footer>

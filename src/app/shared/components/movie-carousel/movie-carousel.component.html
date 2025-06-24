@@ -1,0 +1,49 @@
+
+
+<div class="w-full px-2 md:px-10">
+  <p class="font-semibold text-xl my-3 text-white">{{ title }}</p>
+
+  <swiper-container
+    slides-per-view="auto"
+    space-between="16"
+    loop="true"
+    navigation="true"
+    pagination="true"
+    autoplay-delay="3000"
+    speed="600"
+    class="swiper-container"
+  >
+    <swiper-slide
+      *ngFor="let movie of videoContents"
+      class="!w-[180px] md:!w-[200px] lg:!w-[220px] xl:!w-[240px] flex-shrink-0"
+    >
+      <div 
+       (mouseenter)="setHoverMovie(movie)" (mouseleave)="clearHoverMovie()"  class="relative transition-transform duration-500 hover:scale-105 rounded-xl overflow-hidden shadow-md h-[360px]"
+      >
+        <img
+          [src]="movie.poster_path | image"
+          alt="Movie Image"
+          class="w-full h-full object-cover"
+        />
+
+        <div   *ngIf="(movie.title === this.selectedContent) || (movie.name === this.selectedContent)"  @fade
+        class="text-base font-bold absolute top-4 left-4 text-white drop-shadow" >
+          {{ movie.original_title || movie.title  || movie.name }}
+        </div>
+
+        <div  *ngIf="(movie.title === this.selectedContent) || (movie.name === this.selectedContent)" @fade
+          class="absolute bottom-4 left-4 right-4 text-white text-xs flex justify-between items-center bg-black/60 p-2 rounded"
+        >
+          <span class="line-clamp-3">{{ movie.overview | description}}</span>
+          <span class="text-green-400">⭐ {{ movie.vote_average }}</span>
+        </div>
+
+        <i
+          class="fa fa-chevron-circle-down text-white text-xl absolute bottom-2 right-2"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>
+
